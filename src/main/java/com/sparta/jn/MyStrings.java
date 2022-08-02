@@ -18,10 +18,6 @@ public class MyStrings {
             return false;
         }
         String reversedStr = reverseString(strIn);
-        if(strIn.equalsIgnoreCase(reversedStr)) {
-            return true;
-        } else {
-            return false;
-        }
+        return strIn.equalsIgnoreCase(reversedStr);
     }
 }
