@@ -5,16 +5,22 @@ public class MyStrings {
         return strSearch.contains(strIn);
     }
     public String reverseString(String strIn) {
+        if (strIn == null) {
+            return "";
+        }
         String reversedStr = "";
-        for (int i = strIn.length()-1; i >=0; i--) {
+        for (int i = strIn.length() - 1; i >= 0; i--) {
             reversedStr += strIn.charAt(i);
         }
         return reversedStr;
     }
 
     public boolean isPalindrome(String strIn) {
+        if (strIn == null) {
+            strIn = "";
+        }
         String reversedStr = reverseString(strIn);
-        if(strIn.equals(reversedStr)) {
+        if(strIn.equalsIgnoreCase(reversedStr)) {
             return true;
         } else {
             return false;

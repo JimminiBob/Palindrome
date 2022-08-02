@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest 
 {
-
     @Test
     @DisplayName("Should return a string that is reversed")
     public void shouldReturnReverseString() {
@@ -33,6 +32,21 @@ public class AppTest
     @Test
     @DisplayName("If string is empty should return true")
     void stringEmptyreturnTrue() {
+        MyStrings stringy = new MyStrings();
+        Assertions.assertTrue(stringy.isPalindrome(""));
+    }
 
+    @Test
+    @DisplayName("If it is palindrome return true regardless of case")
+    void ifPalindroneReturnTrueIgnoresCase() {
+        MyStrings stringy = new MyStrings();
+        Assertions.assertTrue(stringy.isPalindrome("kAyak"));
+    }
+
+    @Test
+    @DisplayName("Should return true if string is null")
+    void ifStringIsNullReturnTrue() {
+        MyStrings stringy = new MyStrings();
+        Assertions.assertTrue(stringy.isPalindrome(null));
     }
 }
