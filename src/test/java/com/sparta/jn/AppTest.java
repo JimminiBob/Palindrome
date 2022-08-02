@@ -9,24 +9,20 @@ import org.junit.jupiter.api.Test;
 public class AppTest 
 {
     @Test
-    @DisplayName("Should return a string that is reversed")
-    public void shouldReturnReverseString() {
+    @DisplayName("Should return string **AbCdEfGhIjK** that is reversed")
+    public void shouldReturnReverseStringAbCdEfGhIjK() {
         MyStrings stringy = new MyStrings();
         Assertions.assertEquals("KjIhGfEdCbA", stringy.reverseString("AbCdEfGhIjK"));
-        Assertions.assertEquals("kjihgfedcba", stringy.reverseString("abcdefghijk"));
-
     }
 
     @Test
-    @DisplayName("If the string is a palindrome then should return true")
-    void returnTrueIfPalindrome() {
-        String[] palindromeArry = {"kayak", "deified", "rotator", "repaper", "deed", "peep", "wow", "noon", "civic",
-                "racecar", "level", "mom",};
+    @DisplayName("If the string is **deified** then should return true")
+    void returnTrueIfStringIsdeified() {
+//        String[] palindromeArry = {"kayak", "deified", "rotator", "repaper", "deed", "peep", "wow", "noon", "civic",
+//                "racecar", "level", "mom",};
         MyStrings stringy = new MyStrings();
+        Assertions.assertTrue(stringy.isPalindrome("deified"));
 
-        for(String e: palindromeArry) {
-            assert stringy.isPalindrome(e);
-        }
     }
 
     @Test
@@ -37,8 +33,8 @@ public class AppTest
     }
 
     @Test
-    @DisplayName("If it is palindrome return true regardless of case")
-    void ifPalindroneReturnTrueIgnoresCase() {
+    @DisplayName("Should return true if palindrone has different case")
+    void ifStringIskAyakReturnTrue() {
         MyStrings stringy = new MyStrings();
         Assertions.assertTrue(stringy.isPalindrome("kAyak"));
     }
