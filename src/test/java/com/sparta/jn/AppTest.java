@@ -17,4 +17,22 @@ public class AppTest
         Assertions.assertEquals("kjihgfedcba", stringy.reverseString("abcdefghijk"));
 
     }
+
+    @Test
+    @DisplayName("If the string is a palindrome then should return true")
+    void returnTrueIfPalindrome() {
+        String[] palindromeArry = {"kayak", "deified", "rotator", "repaper", "deed", "peep", "wow", "noon", "civic",
+                "racecar", "level", "mom",};
+        MyStrings stringy = new MyStrings();
+
+        for(String e: palindromeArry) {
+            assert stringy.isPalindrome(e);
+        }
+    }
+
+    @Test
+    @DisplayName("If string is empty should return true")
+    void stringEmptyreturnTrue() {
+
+    }
 }

@@ -13,6 +13,11 @@ public class MyStrings {
     }
 
     public boolean isPalindrome(String strIn) {
-        
+        String reversedStr = reverseString(strIn);
+        if(strIn.equals(reversedStr)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
