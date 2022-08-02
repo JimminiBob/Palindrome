@@ -5,9 +5,7 @@ public class MyStrings {
         return strSearch.contains(strIn);
     }
     public String reverseString(String strIn) {
-        if (strIn == null) {
-            return "";
-        }
+
         String reversedStr = "";
         for (int i = strIn.length() - 1; i >= 0; i--) {
             reversedStr += strIn.charAt(i);
@@ -17,7 +15,7 @@ public class MyStrings {
 
     public boolean isPalindrome(String strIn) {
         if (strIn == null) {
-            strIn = "";
+            return false;
         }
         String reversedStr = reverseString(strIn);
         if(strIn.equalsIgnoreCase(reversedStr)) {

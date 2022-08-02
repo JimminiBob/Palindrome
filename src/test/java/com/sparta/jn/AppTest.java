@@ -44,9 +44,9 @@ public class AppTest
     }
 
     @Test
-    @DisplayName("Should return true if string is null")
-    void ifStringIsNullReturnTrue() {
+    @DisplayName("Should return false if string is null")
+    void ifStringIsNullReturnFalse() {
         MyStrings stringy = new MyStrings();
-        Assertions.assertTrue(stringy.isPalindrome(null));
+        Assertions.assertFalse(stringy.isPalindrome(null));
     }
 }
