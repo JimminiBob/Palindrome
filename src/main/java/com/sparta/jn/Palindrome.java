@@ -1,9 +1,9 @@
 package com.sparta.jn;
 
 public class Palindrome {
-    public boolean letterExists(String strIn, String strSearch) {
-        return strSearch.contains(strIn);
-    }
+//    public boolean letterExists(String strIn, String strSearch) {
+//        return strSearch.contains(strIn);
+//    }
     public static String reverseString(String strIn) {
 
         String reversedStr = "";
@@ -21,24 +21,29 @@ public class Palindrome {
         return strIn.equalsIgnoreCase(reversedStr);
     }
 
-    public static String largestPalindrome(String sentenceIn) {
-
-        int sentenceLength = sentenceIn.length();
-        for (int i = 0; i < sentenceLength - 1; i++) {
-            if (sentenceIn.charAt(0) == ' ') {
-
-            }
+    private static boolean isInIgnoreChars(char charIn) {
+        char[] ignoreChars = {' ', '.', ','};
+        for (char element: ignoreChars) {
+            if (element == charIn)
+                return true;
         }
+        return false;
     }
 
-//    public static String[] sentenceToStrArray(String sentenceIn) {
-//        int sentenceLen = sentenceIn.length();
-//        String[] A
-//        for (int i = 0; i < sentenceLen-1; i++) {
-//            if(sentenceIn.charAt(i) == ' ') {
-//
-//            }
-//
-//        }
-//    }
+    public static String largestPalindrome(String sentenceIn) {
+        int sentenceLength = sentenceIn.length();
+        int leftPointer = 0;
+        String palindrome = "";
+        for (int i = 0; i < sentenceLength - 1; i++) {
+            if (sentenceIn.charAt(i) == ' ') {
+                String word = sentenceIn.substring(leftPointer+1,i);
+                leftPointer = i;
+                if(Palindrome.isPalindrome(word)) {
+                    if(word.length() > palindrome.length())
+                        palindrome = word;
+                }
+            }
+        }
+        return palindrome;
+    }
 }
