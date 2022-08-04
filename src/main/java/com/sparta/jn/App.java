@@ -5,7 +5,7 @@ public class App
     public static void main( String[] args )
     {
 
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
 
         //System.out.println(stringy.letterExists("e","hello"));
 

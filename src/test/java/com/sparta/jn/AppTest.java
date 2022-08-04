@@ -11,7 +11,7 @@ public class AppTest
     @Test
     @DisplayName("Should return string **AbCdEfGhIjK** that is reversed")
     public void shouldReturnReverseStringAbCdEfGhIjK() {
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
         Assertions.assertEquals("KjIhGfEdCbA", stringy.reverseString("AbCdEfGhIjK"));
     }
 
@@ -20,7 +20,7 @@ public class AppTest
     void returnTrueIfStringIsdeified() {
 //        String[] palindromeArry = {"kayak", "deified", "rotator", "repaper", "deed", "peep", "wow", "noon", "civic",
 //                "racecar", "level", "mom",};
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
         Assertions.assertTrue(stringy.isPalindrome("deified"));
 
     }
@@ -28,21 +28,21 @@ public class AppTest
     @Test
     @DisplayName("If string is empty should return true")
     void stringEmptyreturnTrue() {
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
         Assertions.assertTrue(stringy.isPalindrome(""));
     }
 
     @Test
     @DisplayName("Should return true if palindrone has different case")
     void ifStringIskAyakReturnTrue() {
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
         Assertions.assertTrue(stringy.isPalindrome("kAyak"));
     }
 
     @Test
     @DisplayName("Should return false if string is null")
     void ifStringIsNullReturnFalse() {
-        MyStrings stringy = new MyStrings();
+        Palindrome stringy = new Palindrome();
         Assertions.assertFalse(stringy.isPalindrome(null));
     }
 }
