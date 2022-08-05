@@ -6,8 +6,11 @@ public class App
     {
         String sentence1 = "The characters read the same backward as forward. Some examples of palindromic words are " +
                 "redivider, deified, civic, radar, level, rotor, kayak, reviver racecar, madam, and refer";
+
         String sentence2 = "The characters read the same backward as forward Some examples of palindromic words are " +
                 "redivider deified civic radar level rotor kayak reviver racecar madam and refer";
-        System.out.println(Palindrome.largestPalindrome(sentence2));
+
+        String sentence3 = "Words redivider, deified, civic, radar, level,";
+        System.out.println(Palindrome.largestPalindrome(sentence3));
     }
 }

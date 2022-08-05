@@ -21,14 +21,14 @@ public class Palindrome {
         return strIn.equalsIgnoreCase(reversedStr);
     }
 
-    private static boolean isInIgnoreChars(char charIn) {
-        char[] ignoreChars = {' ', '.', ','};
-        for (char element: ignoreChars) {
-            if (element == charIn)
-                return true;
-        }
-        return false;
-    }
+//    private static boolean isInIgnoreChars(char charIn) {
+//        char[] ignoreChars = {' ', '.', ','};
+//        for (char element: ignoreChars) {
+//            if (element == charIn)
+//                return true;
+//        }
+//        return false;
+//    }
 
     public static String largestPalindrome(String sentenceIn) {
         int sentenceLength = sentenceIn.length();
@@ -36,7 +36,8 @@ public class Palindrome {
         String palindrome = "";
         for (int i = 0; i < sentenceLength - 1; i++) {
             if (sentenceIn.charAt(i) == ' ') {
-                String word = sentenceIn.substring(leftPointer+1,i);
+                String word = sentenceIn.substring(leftPointer,i);
+                word = word.strip();
                 leftPointer = i;
                 if(Palindrome.isPalindrome(word)) {
                     if(word.length() > palindrome.length())
