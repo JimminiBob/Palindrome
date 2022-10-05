@@ -1,10 +1,13 @@
 package com.sparta.jn;
 
+import java.util.List;
+import java.util.regex.Pattern;
+
 public class Palindrome {
 //    public boolean letterExists(String strIn, String strSearch) {
 //        return strSearch.contains(strIn);
 //    }
-    public static String reverseString(String strIn) {
+    private static String reverseString(String strIn) {
 
         String reversedStr = "";
         for (int i = strIn.length() - 1; i >= 0; i--) {
@@ -21,30 +24,23 @@ public class Palindrome {
         return strIn.equalsIgnoreCase(reversedStr);
     }
 
-//    private static boolean isInIgnoreChars(char charIn) {
-//        char[] ignoreChars = {' ', '.', ','};
-//        for (char element: ignoreChars) {
-//            if (element == charIn)
-//                return true;
-//        }
-//        return false;
-//    }
+    private static String[] sentenceToArray(String sentence) {
+        String[] words = sentence.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].replaceAll("[^a-zA-Z]","");
+        }
+        return words;
+    }
 
-    public static String largestPalindrome(String sentenceIn) {
-        int sentenceLength = sentenceIn.length();
-        int leftPointer = 0;
-        String palindrome = "";
-        for (int i = 0; i < sentenceLength - 1; i++) {
-            if (sentenceIn.charAt(i) == ' ') {
-                String word = sentenceIn.substring(leftPointer,i);
-                word = word.strip();
-                leftPointer = i;
-                if(Palindrome.isPalindrome(word)) {
-                    if(word.length() > palindrome.length())
-                        palindrome = word;
+        public static String largestPalindrome(String sentenceIn) {
+            String[] words = sentenceToArray(sentenceIn);
+            String largestPalindrone = "";
+            for (int i = 0; i < words.length; i++) {
+                if (isPalindrome(words[i]) && (words[i].length() > largestPalindrone.length())) {
+                    largestPalindrone = words[i];
                 }
             }
+            return largestPalindrone;
         }
-        return palindrome;
-    }
+
 }
